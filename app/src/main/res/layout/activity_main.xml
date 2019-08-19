@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Player 1 : 0"
+            android:freezesText="true"
             android:textSize="30sp" />
 
         <TextView
@@ -23,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_view_p1"
             android:text="Player 2 : 0"
+            android:freezesText="true"
             android:textSize="30sp" />
 
         <Button
@@ -48,6 +50,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:freezesText="true"
             android:textSize="60sp" />
 
         <Button
@@ -55,6 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:freezesText="true"
             android:textSize="60sp" />
 
         <Button
@@ -62,6 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:freezesText="true"
             android:textSize="60sp" />
 
     </LinearLayout>
@@ -76,6 +81,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:freezesText="true"
             android:textSize="60sp" />
 
         <Button
@@ -83,6 +89,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:freezesText="true"
             android:textSize="60sp" />
 
         <Button
@@ -90,6 +97,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:freezesText="true"
             android:textSize="60sp" />
 
     </LinearLayout>
@@ -104,6 +112,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:freezesText="true"
             android:textSize="60sp" />
 
         <Button
@@ -111,6 +120,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:freezesText="true"
             android:textSize="60sp" />
 
         <Button
@@ -118,6 +128,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:freezesText="true"
             android:textSize="60sp" />
 
     </LinearLayout>
