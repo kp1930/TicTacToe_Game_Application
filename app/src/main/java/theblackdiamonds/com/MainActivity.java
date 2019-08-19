@@ -6,12 +6,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button[][] buttons = new Button[3][3];
-    private boolean player1Turn = true;
+    private boolean isPlayer1Turn = true;
     private int roundCount, player1Points, player2Points;
     private TextView textViewPlayer1, textViewPlayer2;
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-        if (player1Turn) {
+        if (isPlayer1Turn) {
             ((Button) v).setText("X");
         } else {
             ((Button) v).setText("O");
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         roundCount++;
 
         if (checkForWin()) {
-            if (player1Turn) {
+            if (isPlayer1Turn) {
                 player1Wins();
             } else {
                 player2Wins();
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (roundCount == 9) {
             draw();
         } else {
-            player1Turn = !player1Turn;
+            isPlayer1Turn = !isPlayer1Turn;
         }
 
     }
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         roundCount = 0;
-        player1Turn = true;
+        isPlayer1Turn = true;
     }
 
     private void resetGame() {
@@ -146,5 +147,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         player2Points = 0;
         updatePointsText();
         resetBoard();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("roundCount", roundCount);
+        outState.putInt("player1Points", player1Points);
+        outState.putInt("player2Points", player2Points);
+        outState.putBoolean("isPlayer1Turn", isPlayer1Turn);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        roundCount = savedInstanceState.getInt("roundCount");
+        player1Points = savedInstanceState.getInt("player1Points");
+        player2Points = savedInstanceState.getInt("player2Points");
+        isPlayer1Turn = savedInstanceState.getBoolean("isPlayer1Turn");
     }
 }
